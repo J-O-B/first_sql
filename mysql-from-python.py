@@ -1,4 +1,5 @@
 import os
+import datetime
 import pymysql
 
 # Get username From Git Workspace
@@ -14,10 +15,8 @@ connection = pymysql.connect(host='localhost',
 try:
     # Run A Query
     with connection.cursor() as cursor:
-        sql = "Select * FROM Artist;"
-        cursor.execute(sql)
-        result = cursor.fetchall()
-        print(result)
+        cursor.execute("DELETE FROM Friends WHERE name in ('jim','bob')")
+        connection.commit()
 finally:
     # Close Connection to SQL
     connection.close()
