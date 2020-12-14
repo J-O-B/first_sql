@@ -1,0 +1,3 @@
+mysql> desc AlbumId;
+ERROR 1146 (42S02): Table 'Chinook.AlbumId' doesn't exist
+mysql> notee
